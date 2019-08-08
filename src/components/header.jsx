@@ -7,23 +7,18 @@ import {selectFilter} from "../reducer/storeReducer";
 
 export default function Header () {
 
-    // state
-
     const [count, setCount] = useState(5);
     const [interval, setInterval] = useState(100);
     const [filter, setFilter] = useState('');
 
     // store
-
     useObserve(selectFilter, setFilter);
 
     // side effects
-
     const loadQuotesSideEffect = useSideEffect(EFFECTS.METRICS_LOAD);
     useSideEffect(EFFECTS.METRIC_RESTART_UPDATES)({count, interval});
 
     // dispatch
-
     const filterChangedHandler = useDispatch(ACTIONS.FILTER_CHANGED);
 
     return (
