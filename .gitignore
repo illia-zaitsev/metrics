@@ -1,0 +1,11 @@
+node_modules/
+*.log
+coverage*/
+.DS_Store
+docs/_build/*
+env*
+*.pyc
+*.pickle
+.idea/*
+.vscode/
+.queries/
