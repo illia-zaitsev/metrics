@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import useMetricFilter from "../hooks/useMetricFilter";
 
 export default function Footer() {
 
     const metrics = useMetricFilter();
 
-    return <footer>{metrics.length} metrics</footer>
+    return useMemo(() => <footer>{metrics.length} metrics</footer>, [metrics.length])
 }

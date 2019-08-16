@@ -1,5 +1,5 @@
 import React from "react";
-import useQuoteSubscribe from "../hooks/useQuoteSubscribe";
+import useMetricSubscribe from "../hooks/useMetricSubscribe";
 import useDispatch from "../lib/useDispatch";
 import { ACTIONS } from "../constants/constants";
 import oval from "../oval.svg";
@@ -11,7 +11,7 @@ export default React.memo(function Card(props) {
   const removeMetricHandler = useDispatch(ACTIONS.REMOVE_METRIC);
 
   // trigger side effects
-  useQuoteSubscribe(metric.id);
+  useMetricSubscribe(metric.id);
 
   return (
     <div>
