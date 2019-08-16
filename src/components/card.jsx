@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import useQuoteSubscribe from "../hooks/useQuoteSubscribe";
 import {selectMetric} from "../reducer/storeReducer";
 import { useSelector } from 'react-redux'
@@ -6,8 +6,7 @@ import useDispatch from "../lib/useDispatch";
 import {ACTIONS} from "../constants/constants";
 import oval from '../oval.svg';
 
-// export default React.memo(function Card (props) {
-export default function Card (props) {
+export default React.memo(function Card (props) {
 
     const id = (props && props.metric) ? props.metric.id : null;
     const metric = useSelector(selectMetric(id));
@@ -28,4 +27,4 @@ export default function Card (props) {
             }
         </div>
     );
-};
+});
