@@ -37,12 +37,14 @@ export default function Header() {
         Update random
         <input
           type="number"
+          min="0" max="10000"
           value={count}
           onChange={e => setCount(parseInt(e.target.value))}
         />
         metrics every
         <input
           type="number"
+          min="10" max="600000"
           value={interval}
           onChange={e => setInterval(parseInt(e.target.value))}
         />
