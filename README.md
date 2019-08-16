@@ -1,4 +1,4 @@
-This project is an example of using redux hooks, playing with performance optimizations.
+This project is an example of using redux hooks, custom hooks, playing with performance optimizations.
 
 In the project directory, you can run:
 

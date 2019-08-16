@@ -9,7 +9,7 @@ export default class MetricService {
     return Math.floor(Math.random() * (1 + top - bot)) + bot;
   }
 
-  generateMetricsHandler(num = 10) {
+  generateMetricsHandler(num = 50) {
     const names = ["All trips", "Cancelled", "EAT", "Eyeballs"];
     const genName = () => names[this.genNum(0, names.length - 1)];
     return Array.from({ length: num }).map(() => ({
@@ -30,10 +30,12 @@ export default class MetricService {
       for (let i = 0; i < count; i++) {
         const index = this.genNum(0, this.list.length - 1);
         const id = this.list[index];
-        const newMetric = { id: id, value: this.genNum(1, 100) };
-        randomUpdates.push(newMetric);
+        if (id) {
+          const newMetric = { id: id, value: this.genNum(1, 100) };
+          randomUpdates.push(newMetric);
+        }
       }
-      dispatch(randomUpdates);
+      if (randomUpdates.length) dispatch(randomUpdates);
     }, interval);
   }
 

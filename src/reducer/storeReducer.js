@@ -9,7 +9,6 @@ const initialState = {
 
 export const selectMetrics = state => state.metrics;
 export const selectFilter = state => state.filter;
-export const selectMetric = id => state => state.metrics.find(metric => metric.id === id);
 
 // reducer
 

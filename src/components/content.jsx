@@ -12,6 +12,6 @@ export default function Content() {
         {metrics.map(m => (<Card metric={m} key={m.id} />))}
       </main>
     ),
-    [metrics.length]
+    [metrics]
   );
 }

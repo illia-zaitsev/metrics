@@ -13,7 +13,7 @@ export default function Header() {
   const filter = useSelector(selectFilter);
 
   // side effects
-  const loadQuotesSideEffect = useSideEffect(EFFECTS.METRICS_LOAD);
+  const loadMetricsHandler = useSideEffect(EFFECTS.METRICS_LOAD);
   useSideEffect(EFFECTS.METRIC_RESTART_UPDATES)({ count, interval });
 
   // dispatch
@@ -31,8 +31,8 @@ export default function Header() {
         />
         <input
           type="button"
-          value="add 10 new metrics"
-          onClick={() => loadQuotesSideEffect()}
+          value="add 50 new metrics"
+          onClick={() => loadMetricsHandler()}
         />
         Update random
         <input
