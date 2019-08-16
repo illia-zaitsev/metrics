@@ -6,22 +6,17 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import Content from "./components/content";
 import {storeReducer} from "./reducer/storeReducer";
-import {createEffects} from "./lib/createEffects";
-import {effectsReducer} from "./reducer/effectsReducer";
+import AppProvider from "./lib/provider";
 
-function App() {
+export default function App() {
 
-    const   store = createStore(storeReducer),
-            effects = createEffects(effectsReducer, store.dispatch);
+    const store = createStore(storeReducer);
 
     return (
-        <AppContext.Provider value={{store, effects}}>
+        <AppProvider store={store}>
             <Header/>
             <Content/>
             <Footer/>
-        </AppContext.Provider>
+        </AppProvider>
     )
 }
-
-export const AppContext = React.createContext('');
-export default App;

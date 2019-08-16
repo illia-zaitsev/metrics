@@ -1,15 +1,15 @@
 export function observeStore(store, select, onChange) {
-    let currentState;
+  let currentState;
 
-    function handleChange() {
-        let nextState = select(store.getState());
-        if (nextState !== currentState) {
-            currentState = nextState;
-            onChange(currentState);
-        }
+  function handleChange() {
+    let nextState = select(store.getState());
+    if (nextState !== currentState) {
+      currentState = nextState;
+      onChange(currentState);
     }
+  }
 
-    let unsubscribe = store.subscribe(handleChange);
-    handleChange();
-    return unsubscribe;
+  let unsubscribe = store.subscribe(handleChange);
+  handleChange();
+  return unsubscribe;
 }
